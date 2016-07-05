@@ -10,29 +10,19 @@ include_directories( "${INCLUDE_DIR}")
 include_directories( "${PROJECT_BINARY_DIR}")
 
 # Boost
-if(WIN32)
-    set( BOOST_ROOT "D:/boost_1_56_0")
-    set( BOOST_LIBRARYDIR "${BOOST_ROOT}/lib64-msvc-11.0")
-endif(WIN32)
 find_package( Boost 1.5 REQUIRED COMPONENTS filesystem system thread random)
 include_directories( ${Boost_INCLUDE_DIRS})
 link_directories( ${Boost_LIBRARY_DIRS})
 
 # OpenCV
-if(WIN32)
-    set( OpenCV_DIR "${LOCALLIBS}/opencv")
-endif(WIN32)
 find_package( OpenCV 2.4 REQUIRED)
 include_directories( ${OpenCV_INCLUDE_DIRS})
 
-set( RFeatures_DIR "${LOCALLIBS}/rFeatures")
 find_package( RFeatures REQUIRED)
 include_directories( ${RFeatures_INCLUDE_DIR})
 
-set( LibLAS_DIR "${LOCALLIBS}/libLAS-1.7.0")
 find_package( LibLAS REQUIRED)
 
-set( RLIB_DIR "${LOCALLIBS}/rlib")
 find_package( RLIB REQUIRED)
 include_directories( ${RLIB_INCLUDE_DIR})
 
@@ -89,6 +79,4 @@ install( FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}_Export.h" DESTINATION "inc
 install( FILES ${INCLUDE_FILES} DESTINATION "include")
 # Copy across this library's Find cmake module to ${LOCALLIBS}/cmake
 install( FILES "${PROJECT_SOURCE_DIR}/../CMakeModules/FindRHoughVoting.cmake" DESTINATION "${LOCALLIBS}/cmake")
-
-
 
