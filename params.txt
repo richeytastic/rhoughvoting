@@ -1,0 +1,29 @@
+# Forest save/load location
+FOREST_DIR: forest_cars+nothing_GL-DEPTH-5-16_SCALED0.5_class_2Doffset
+
+# Features for training/testing
+#FEATURE: GL COLOUR 16 5
+FEATURE: GL DEPTH 16 5
+
+# Patch scaling parameters for feature generation and testing
+DEPTH_ADAPTIVE: true
+SQUARE_PATCH_DIMS: 0.5
+
+# Forest training
+NUM_TREES: 10
+MAX_TREE_HEIGHT: 15
+MIN_SAMPLES_PER_LEAF: 20
+
+# Dataset parameters for patch feature generation.
+# Datasets specified in class order; first is negative class, second is positive class.
+TRAIN_DATA: /home/rich/AAM/GroundTruth/nothing.dat
+TRAIN_DATA: /home/rich/AAM/GroundTruth/car.dat
+PANOS_DIR: /home/rich/AAM_Panos
+PATCH_COUNT: 50
+
+# Test view
+TEST_PANO: /home/rich/AAM_Panos/GeelongRd000063_51.pano LEFT
+#TEST_PANO: /home/rich/AAM_Panos/GeelongRd000063_71.pano LEFT
+#TEST_PANO: /home/rich/AAM_Panos/GeelongRd000039_11.pano LEFT
+#TEST_PANO: /home/rich/AAM_Panos/GeelongRd000009_29.pano RIGHT
+
